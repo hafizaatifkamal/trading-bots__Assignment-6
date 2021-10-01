@@ -36,11 +36,11 @@ export const BotsReducer = (state = botsData, { type, payload }) => {
 };
 
 
-export const SelectedBotsReducer = (state = {}, { type, payload }) => {
+export const SelectedBotsReducer = (state = botsData, { type, payload }) => {
 	console.log(type);
 	switch (type) {
-		case ActionTypes.SETECT_BOTS:
-			return {...state, bots: payload};
+		case ActionTypes.SELECT_BOTS:
+			return {...state, ...payload};
 		default:
 			return state;
 	}

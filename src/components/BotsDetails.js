@@ -3,21 +3,29 @@ import { BotsReducer, SelectedBotsReducer } from "../redux/actions/BotAction";
 import { useSelector } from "react-redux";
 
 const BotsDetails = (props) => {
-	console.log(props);
 
-	const botItems = useSelector((state) => state.bots.botItems);
+	const {match} = props 
+    const {params} = match
+    let {id} = params
 
-	const renderBotItems = botItems.map((item) => {
-		const { id, bot, description, index_value, cagr} = item;
+    id = parseInt(id);
+
+	const botItems = useSelector((state) => state.allBots.bots);
+
+
+	let renderBotItems = botItems.filter((item) => id === item.id )
+		
+	console.log(renderBotItems);
+
+	renderBotItems = renderBotItems[0];
 
 		return (
 			<div key={id}>
-			<h1>Hello</h1>
 				<div>
 					<div>
-						{bot}
+						{renderBotItems.bot}
 						<div>
-							{description}
+							{renderBotItems.description}
 						</div>
 						<div>
 							<button type="button">MODERATE RISK</button>
@@ -26,18 +34,16 @@ const BotsDetails = (props) => {
 					</div>
 					<div>
 						Index Value
-						<div>{index_value}</div>
+						<div>{renderBotItems['index_value']}</div>
 					</div>
 					<div>
 						CAGR
-						<div>{cagr}</div>
+						<div>{renderBotItems.cagr}</div>
 					</div>
 				</div>
 			</div>
-		)
-	});
+	)
+}
 
-	return <>{renderBotItems}</>;
-};
 
 export default BotsDetails;

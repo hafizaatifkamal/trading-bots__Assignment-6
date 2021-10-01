@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 const BotsComponent = () => {
 
 	const bots = useSelector((state) => state.allBots.bots);
+	console.log(bots);
 
 	const renderBots = bots.map((item) => {
 		const { id, bot, index_value, cagr} = item;
@@ -23,7 +24,7 @@ const BotsComponent = () => {
 						<div>{cagr}</div>
 					</div>
 					<button type="button">
-						<Link to={`/bot-details/${id}`}>
+						<Link to={`/bots-details/${id}`}>
 							View Algo
 						</Link>
 					</button>

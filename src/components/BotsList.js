@@ -8,7 +8,7 @@ const BotsList = () => {
 	console.log(Bots);
 
 	return (
-		<div className="ui grid container">
+		<div>
 			<BotsComponent />
 		</div>
 	);

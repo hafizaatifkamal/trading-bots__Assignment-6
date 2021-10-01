@@ -7,9 +7,9 @@ export const setBots = (bots) => {
 	};
 };
 
-export const selectBots = (bot) => {
+export const selectBots = (botItem) => {
 	return {
-		type: ActionTypes.SETECT_BOTS,
-		payload: bot
+		type: ActionTypes.SELECT_BOTS,
+		payload: botItem
 	};
 };

@@ -3,7 +3,8 @@ import { BotsReducer, SelectedBotsReducer } from "./BotsReducer";
 
 const reducers = combineReducers({
 	allBots: BotsReducer,
-	bots: SelectedBotsReducer
+	Bots: SelectedBotsReducer
 });
+
 
 export default reducers;

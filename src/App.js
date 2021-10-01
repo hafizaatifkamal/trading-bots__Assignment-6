@@ -14,10 +14,10 @@ function App() {
       <Router>
         <Header />
         <Switch>
-          {/*<Route path="/" exact component={BotsComponent} />*/}
+          <Route path="/" exact component={BotsComponent} />
           <Route path="/bots" exact component={BotsList} />
           <Route path="/bots-details/:id" exact component={BotsDetails} />
-          {/*<Route>Something went wrong, 404 Not Found!</Route>*/}
+          <Route>Something went wrong, 404 Not Found!</Route>
         </Switch>
       </Router>
     </div>
