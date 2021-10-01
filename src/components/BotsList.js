@@ -9,6 +9,7 @@ const BotsList = () => {
 
 	return (
 		<div>
+			<h4>Select the best Algo Suited for your need</h4>
 			<BotsComponent />
 		</div>
 	);
